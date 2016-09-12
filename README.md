@@ -19,6 +19,12 @@ For Running the test script you need to install the additional packages:
 - npm install chai						- Chai is a BDD / TDD assertion library
 - npm install chai-http				- Chai Extension for HTTP
 
+Files:
+- main.js - This is the web app that solves the problem presented
+- test.js - This is the automated tes
+- ip_event.proto - Google Protocol Buffer Description provided by Lookout
+- ip_event.desc - Machine readable output of protoc for node-protobuf library
+
 To run the server:
 %node [path]/main.js
 
