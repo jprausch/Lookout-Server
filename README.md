@@ -24,7 +24,7 @@ To run the server:
 %node [path]/main.js
 
 To run the test suite:
-%[path]/node_modules/mocha/bin/mocha test.js
+%[path]/node_modules/mocha/bin/mocha [path]/test.js
 
 Output of test suite:
 
