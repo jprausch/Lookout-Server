@@ -25,6 +25,8 @@ To run the server:
 To run the test suite:
 %[path]/node_modules/mocha/bin/mocha [path]/test.js
 
+Note: test.js and main.js should be in the same directory when running test.js.
+
 Output of test suite:
 
   Unit Tests for Good/Bad IP Lists
