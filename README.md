@@ -10,8 +10,7 @@ In order to run my web app in your own environment you need to install the webse
 https://nodejs.org/en/download/
 
 After installation you need to install the following packages:
-- npm install node-protobuf   Package to serialize and parse Google Proto Bufs  
-- npm install netmask         Simple Package for Subnet masking
+- npm install node-protobuf   Package to serialize and parse Google Proto Bufs
 - npm install express         Fast Web Franmework for Node JS
 - npm install unique-concat   Package that combines to arrays into one and deletes duplicates
 
@@ -54,10 +53,12 @@ Output of test suite:
         ✓ should return 200
         ✓ should return 200
         ✓ should return 200
+        ✓ add base ip, should return 200
+        ✓ add broadcast ip, should return 200
         ✓ should return 200
     Get and Delete Tests
       Get Valid URL
-        ✓ should return 200 and valid data
+        ✓ should return 200 and valid data with base and broadcast IPs on bad list
       Delete Valid URL
         ✓ should return 200
       Get InValid URL
