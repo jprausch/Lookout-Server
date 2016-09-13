@@ -76,7 +76,7 @@ describe("Integration Tests", function() {
                 });
             });
         });
-        describe("Post To Valid URL with Bad data", function() {
+        describe("Post To Valid URL with non-Json data", function() {
             it('should return 400', function (done) {
                 chai.request(main.server).post('/events')
                 .set('content-type', 'application/octet-stream')
@@ -87,7 +87,7 @@ describe("Integration Tests", function() {
                 });
             });
         });
-        describe("Post with bad data (IP Address > 255.255.255.255)", function() {
+        describe("Post with bad Json data (IP Address > 255.255.255.255)", function() {
              it('should return 400', function (done) {
                 var obj = {
                     "app_sha256": "testhash1",
@@ -103,7 +103,7 @@ describe("Integration Tests", function() {
                 });
             });
         });
-        describe("Post with conent-type", function() {
+        describe("Post with invalid content-type", function() {
              it('should return 400', function (done) {
                 var obj = {
                     "app_sha256": "testhash1",
