@@ -11,6 +11,8 @@ https://nodejs.org/en/download/
 
 After installation you need to install the following packages:
 - npm install node-protobuf		- Package to serialize and parse Google Proto Bufs
+
+This installation of this package was not straight forward.  Please look at https://github.com/fuwaneko/node-protobuf for installation instructions or if you are installing on Heroku you must install a build package first, see https://github.com/hfwang/heroku-buildpack-protobuf
 - npm install express					- Fast Web Framework for Node JS
 - npm install unique-concat		- Package that combines two arrays into one and deletes duplicate entries
 
@@ -21,9 +23,10 @@ For Running the test script you need to install the additional packages:
 
 Files:
 - main.js - This is the web app that solves the problem presented
-- test.js - This is the automated tes
+- test.js - This is the automated test
 - ip_event.proto - Google Protocol Buffer Description provided by Lookout
 - ip_event.desc - Machine readable output of protoc for node-protobuf library
+- package.json - installation file
 
 To run the server:
 %node [path]/main.js
