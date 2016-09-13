@@ -38,14 +38,13 @@ function sortAndStringIps(ips) {
 //Input Key - app_sha256
 //Output - Object with count, good IP List and bad IP List
 function createGetResponse(key) {
-    var count = 0;
-    var goodCount = 0;
-    var goodIp = 0;
-    var badIp = [];
-    // Loop through all base array keys
+    // Test for valid object 
     if (typeof appArray[key] !== 'undefined') {
-        count  = appArray[key].badCount;
-        badIp = appArray[key].badArray.slice();
+        var count = appArray[key].badCount;
+        var goodCount = 0;
+        var goodIp = 0;
+        var badIp = appArray[key].badArray.slice();
+        // Loop through all base array keys
         for (var ipBase in appArray[key].ipArray) {
             // Keep Track of Total Count
             count += appArray[key].ipArray[ipBase].count;
@@ -68,16 +67,14 @@ function createGetResponse(key) {
             goodIp: sortAndStringIps(appArray[key].ipArray[goodIp].ip),
             badIp: sortAndStringIps(badIp)
         };
-    } else {
-        // Should not get here but be safe
-        // having a seperate return in error case prevents having to copy good IP array
-        return {
+    }
+    // Should not get here but be safe
+    // having a seperate return in error case prevents having to copy good IP array
+    return {
         count: 0,
         goodIp: [],
         badIp: []
-        };
-    }
-    return count;
+    };
 }
 
 // Functions to initialize associative arrays
@@ -196,7 +193,7 @@ eventHandle.delete('/events', function(req, res) {
 });
 
 // Now Start the Service
-var server = eventHandle.listen(PORT, () => {
+var server = eventHandle.listen(process.env.PORT || PORT, function() {
     var port = server.address().port;
     console.log('App listening on port %s', port);
 });
