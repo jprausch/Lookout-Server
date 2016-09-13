@@ -38,7 +38,7 @@ Note: test.js and main.js should be in the same directory when running test.js.
 
 Output of test suite:
 
-  Unit Tests for Good/Bad IP Lists
+    Unit Tests for Good/Bad IP Lists
   
     Number to IP Converter
       ✓ converts numbers to ip
@@ -48,16 +48,16 @@ Output of test suite:
       Test Data Store Empty
         ✓ clear data Store and return good Ip, bad Ip, and count
   
-  Integration Tests
+    Integration Tests
   
     Post Tests
       Post To Invalid URL
         ✓ should return 404
-      Post To Valid URL with Bad data
+      Post To Valid URL with non-Json data
         ✓ should return 400
-      Post with bad data (IP Address > 255.255.255.255)
+      Post with bad Json data (IP Address > 255.255.255.255)
         ✓ should return 400
-      Post with conent-type
+      Post with invalid content-type
         ✓ should return 400
       Post with valid-data
         ✓ should return 200
